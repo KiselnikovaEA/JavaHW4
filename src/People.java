@@ -33,8 +33,9 @@ public class People {
             ages.add(Integer.parseInt(tmp[3]));
             gender.add(tmp[4]);
         }
+        System.out.println();
 
-        for (int i = 1; i < surnames.size() + 1; i++) { // заполняем индексы
+        for (int i = 0; i < surnames.size(); i++) { // заполняем индексы
             indexes.add(i);
         }
 
@@ -42,19 +43,18 @@ public class People {
         for (int i = 0; i < indexes.size(); i++) {
             int minInd = i;
             for (int j = i; j < indexes.size(); j++) {
-                if (ages.get(j) < ages.get(minInd)) {
+                if (ages.get(indexes.get(j)) < ages.get(indexes.get(minInd))) {
                     minInd = j;
                 }
             }
-            //swap(array, left, minInd);
             temp = indexes.get(i);
             indexes.set(i, indexes.get(minInd));
             indexes.set(minInd, temp);
         }
-        System.out.println(indexes);
 
-        for (int i = 0; i < ages.size(); i++) {
-            System.out.print(ages.get(indexes.get(i)) + " ");
+        System.out.println("Сортировка по возрасту: ");
+        for (int i = 0; i < indexes.size(); i++) {
+            System.out.println("Фамилия: " + surnames.get(indexes.get(i)) + ", возраст: " + ages.get(indexes.get(i)));
         }
 
     }
