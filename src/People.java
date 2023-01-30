@@ -39,7 +39,7 @@ public class People {
             indexes.add(i);
         }
 
-        Integer temp;
+        Integer temp;       // сортируем массив с индексами по возрасту
         for (int i = 0; i < indexes.size(); i++) {
             int minInd = i;
             for (int j = i; j < indexes.size(); j++) {
@@ -53,8 +53,8 @@ public class People {
         }
 
         System.out.println("Сортировка по возрасту: ");
-        for (int i = 0; i < indexes.size(); i++) {
-            System.out.println("Фамилия: " + surnames.get(indexes.get(i)) + ", возраст: " + ages.get(indexes.get(i)));
+        for (Integer index : indexes) {
+            System.out.println("Фамилия: " + surnames.get(index) + ", возраст: " + ages.get(index));
         }
 
     }
